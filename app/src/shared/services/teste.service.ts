@@ -10,7 +10,11 @@ export class TesteService {
 
   async test() {
     const a = await this.http.get('https://elite-gym-api.herokuapp.com/').toPromise();
+    const title = a['title'];
+    console.log('TITULO: ', a['title']);
     debugger;
+
+
     return a;
   }
 }
