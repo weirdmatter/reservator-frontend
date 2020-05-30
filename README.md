@@ -1,6 +1,10 @@
 # Trabalho 1 - Verificação e Validação de Software
 
-Este projeto foi construído utilizando o framework Angular em sua versão 9.1, juntametne com a biblioteca de componentes Angular Material, para auxiliar no desenvolvimento de interfaces gráficas com maior praticidade e velocidade.
+Este projeto foi construído utilizando o framework Angular em sua versão 9.1, juntamente com a biblioteca de componentes Angular Material, para auxiliar no desenvolvimento de interfaces gráficas com maior praticidade e velocidade.
+
+## Documentação do projeto
+
+* [**Especificação de requisitos**](https://docs.google.com/document/d/1JMMzQXDM1ULXO_XHwpeq7yFPryAYrH_ymIX2AcZkTW8/edit?usp=sharing)
 
 ## Instruções de desenvolvimento
 
