@@ -13,6 +13,7 @@ export class AppComponent {
     console.log('aaaaa;');
 
     const a = this.testService.test();
+    debugger;
   }
 
 }
