@@ -13,6 +13,8 @@ export class AppComponent {
     console.log('aaaaa;');
 
     const a = this.testService.test();
+    console.log('TITULO: ', a['title']);
+
     debugger;
   }
 
