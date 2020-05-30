@@ -9,7 +9,7 @@ export class TesteService {
   constructor(private http : HttpClient) { }
 
   async test() {
-    const a = await this.http.get('http://elite-gym-api.herokuapp.com/').toPromise();
+    const a = await this.http.get('https://elite-gym-api.herokuapp.com/').toPromise();
     debugger;
     return a;
   }
