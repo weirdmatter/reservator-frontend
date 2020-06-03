@@ -1,0 +1,35 @@
+<section class="wrapper">
+
+  <section>
+    <h1>Reservas</h1>
+    <h2>Lorem ipsum os guri no flying high</h2>
+  </section>
+
+  <section class="filter-n-action">
+    <section>
+
+      <h3>Período de pesquisa</h3>
+
+      <form [formGroup]="form">
+
+        <mat-form-field appearance="outline">
+          <mat-label>De</mat-label>
+          <input matInput formControlName="initialDate" placeholder="Data inicial da pesquisa">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Até</mat-label>
+          <input matInput formControlName="finalDate" placeholder="Data final da pesquisa">
+        </mat-form-field>
+
+      </form>
+
+    </section>
+
+    <section>
+      <button mat-raised-button>Basic</button>
+    </section>
+
+  </section>
+
+</section>
