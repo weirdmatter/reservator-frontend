@@ -3,14 +3,14 @@
   <section class="card-header">
     <section>
       <h3>Grupo da reserva</h3>
-      <h4>1927319837</h4>
+      <h4>{{data.reservation_group_id}}</h4>
     </section>
     <section>
       <h3>Responsável</h3>
-      <h4>0198131928</h4>
+      <h4>{{data.collaborator_id}}</h4>
     </section>
 
-    <button mat-icon-button>
+    <button mat-icon-button (click)="onDeleteClick()">
       <mat-icon>delete_forever</mat-icon>
     </button>
   </section>
