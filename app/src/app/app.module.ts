@@ -15,12 +15,14 @@ import {ListingComponent}           from "../shared/components/listing/presenter
 import {ReactiveFormsModule}        from "@angular/forms";
 import {MatInputModule}             from "@angular/material/input";
 import {MatButtonModule}            from "@angular/material/button";
+import {ReservationCardComponent} from "../shared/components/reservation-card/presenter/reservation-card.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    ListingComponent
+    ListingComponent,
+    ReservationCardComponent
   ],
   imports: [
     BrowserModule,
