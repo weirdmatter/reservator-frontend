@@ -24,6 +24,9 @@ import { AdminPanelPresenterComponent }           from './admin-panel/presenter/
 import { AdminPanelControllerComponent }          from './admin-panel/controller/admin-panel.controller.component';
 import { NewReservationPresenterComponent }       from './new-reservation/presenter/new-reservation.presenter.component';
 import { NewReservationControllerComponent }      from './new-reservation/controller/new-reservation.controller.component';
+import { MatDatepickerModule }                    from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE }   from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -52,9 +55,14 @@ import { NewReservationControllerComponent }      from './new-reservation/contro
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 <div *ngIf="reservationListingConfig">
-  <app-ui-listing  [config]="reservationListingConfig"></app-ui-listing>
+  <app-ui-listing
+    [config]="reservationListingConfig"
+    (search)="searchReservations($event)">
+  </app-ui-listing>
 </div>
-

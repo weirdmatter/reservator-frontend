@@ -59,7 +59,7 @@ export class ListReservationsControllerComponent implements OnInit {
             total_price : 100.73
           }
         ],
-        creation_date             : new Date()
+        creation_date             : new Date(2020,6,3)
       },
       {
         reservation_group_id      : 'bbbbbdddddwdadasdw',
@@ -97,7 +97,7 @@ export class ListReservationsControllerComponent implements OnInit {
             total_price : 2.21
           }
         ],
-        creation_date             : new Date()
+        creation_date             : new Date(2020,6,7)
       }
     ];
 
@@ -110,6 +110,53 @@ export class ListReservationsControllerComponent implements OnInit {
     }
 
   }
+
+  private async searchReservations(dates : object) {
+    // const reservations = await this.reservations.getReservations(dates);
+    const reservations : Reservation[] = [
+      {
+        reservation_group_id      : 'abcdefg1234567',
+        collaborator_registration : 'FINAN_20190411_11',
+        total_price               : 135.19,
+        resources                 : [
+          {
+            resource : {
+              resource_id   : 13245,
+              code          : 'ABC',
+              name          : 'Cadeira',
+              total_amount  : 55,
+              available_amount : 13,
+              price: 10,
+              type: ResourceType.FURNITURE,
+            },
+            begin_date : new Date(),
+            end_date   : new Date(),
+            amount     : 2,
+            total_price : 22.00
+          },
+          {
+            resource : {
+              resource_id   : 6789,
+              code          : 'AAAA',
+              name          : 'Sala 03',
+              total_amount  : 1,
+              available_amount : 1,
+              price: 100.73,
+              type: ResourceType.ROOM,
+            },
+            begin_date : new Date(),
+            end_date   : new Date(),
+            amount     : 1,
+            total_price : 100.73
+          }
+        ],
+        creation_date             : new Date(2020,6,3)
+      }
+    ];
+
+    this.reservationListingConfig.data = reservations;
+  }
+
 
 
 

@@ -20,7 +20,7 @@ export class CollaboratorService {
   /**
    * Fetches the cost of reservations made by all collaborators
    */
-  getCollaboratorsTotalCost() : Promise<CollaboratorCost[]> {
-    return this.http.get('collaborators/costs');
+  getCollaboratorsTotalCost(start : string, end : string) : Promise<CollaboratorCost[]> {
+    return this.http.get(`collaborators/costs?start=${start}&end=${end}`);
   }
 }
