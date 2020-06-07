@@ -1,6 +1,6 @@
-import {Resource} from "./resource.interface";
+import {Resource}     from "./resource.interface";
 import {Collaborator} from "./collaborator.interface";
-import {Reservation} from "./reservation.interface";
+import {Reservation}  from "./reservation.interface";
 
 export interface ListingConfig {
   title: string,

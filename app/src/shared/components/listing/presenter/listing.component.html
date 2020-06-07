@@ -6,12 +6,9 @@
   </section>
 
   <section class="filter-n-action">
-    <section>
-
+    <section *ngIf="config.hasFilter">
       <h3>Período de pesquisa</h3>
-
       <form [formGroup]="form">
-
         <mat-form-field appearance="outline">
           <mat-label>De</mat-label>
           <input matInput formControlName="initialDate" placeholder="Data inicial da pesquisa">
@@ -21,19 +18,29 @@
           <mat-label>Até</mat-label>
           <input matInput formControlName="finalDate" placeholder="Data final da pesquisa">
         </mat-form-field>
-
       </form>
-
     </section>
 
-    <section>
-      <button mat-raised-button>Basic</button>
+    <section *ngIf="config.hasAction">
+      <button class="primary" mat-raised-button>Nova Reserva</button>
     </section>
 
   </section>
 
-  <section>
-    <app-reservation-card></app-reservation-card>
-  </section>
+  <ng-container *ngIf="config?.data; else elseTemplate">
+    <section class="items" *ngFor="let reservation of config.data">
+      <app-reservation-card [data]="reservation"></app-reservation-card>
+    </section>
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <section class="no-reservations-yet">
+      <img class="img" src="assets/img/alerta.svg" alt="Ilustração mostrando um ícone de aviso e uma parede vazia, simbolizando que nenhuma reserva foi encontrada">
+      <h2>Ops! Não encontramos nenhum registro para esta pesquisa.</h2>
+      <h3><b>Dica: </b>Altere o filtro de datas e tente novamente.</h3>
+    </section>
+  </ng-template>
+
+
 
 </section>

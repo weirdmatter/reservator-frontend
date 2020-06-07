@@ -8,13 +8,12 @@ import {Reservation} from "../../../interfaces/reservation.interface";
 })
 export class ReservationCardPresenterComponent implements OnInit {
 
-  @Input() data: Reservation
-  @Output() delete: EventEmitter<string> = new EventEmitter<string>()
+  @Input() data     : Reservation
+  @Output() delete  : EventEmitter<string> = new EventEmitter<string>()
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onDeleteClick() {
     this.delete.emit(this.data.reservation_group_id)

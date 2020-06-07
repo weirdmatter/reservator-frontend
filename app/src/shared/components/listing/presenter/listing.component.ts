@@ -18,6 +18,6 @@ export class ListingComponent implements OnInit {
     this.form = this.fb.group({
       initialDate: ['', Validators.required],
       finalDate: ['', Validators.required]
-    })
+    });
   }
 }

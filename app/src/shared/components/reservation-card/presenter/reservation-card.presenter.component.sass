@@ -2,9 +2,7 @@
   display: flex
   flex-flow: column
   padding: 24px 5%
-  -webkit-box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.23)
-  -moz-box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.23)
-  box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.23)
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
   border-radius: 15px
   h3
     font-size: 18px
@@ -24,9 +22,22 @@
 .card-items .item
   margin-left: 8px
   display: flex
-  flex-flow: row wrap
+  flex-flow: column
   section
     display: flex
     flex-flow: column
-  section:last-child
-    margin-left: 24px
+  // section:last-child
+  //   margin-left: 24px
+
+.dates
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+  .date-item
+    display: flex
+    justify-content: space-around
+
+  .date-item h4:last-child
+    margin-left: 16px
+
