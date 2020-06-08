@@ -111,7 +111,7 @@ export class ListReservationsControllerComponent implements OnInit {
 
   }
 
-  private async searchReservations(dates : object) {
+  async searchReservations(dates : object) {
     // const reservations = await this.reservations.getReservations(dates);
     const reservations : Reservation[] = [
       {
