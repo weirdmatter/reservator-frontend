@@ -29,7 +29,7 @@ export class ListingComponent implements OnInit {
     });
   }
 
-  private onDateChanged() {
+  onDateChanged() {
     if (!this.datesAreValid()) return;
     this.search.emit({
       start : this.datePipe.transform(this.form.get('initialDate').value, 'dd/MM/yyyy'),
