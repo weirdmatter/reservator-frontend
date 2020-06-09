@@ -4,7 +4,7 @@ export interface Resource {
   resource_id       : number,
   code              : string,
   name              : string,
-  total_amount      : number,
+  // total_amount      : number,
   available_amount  : number,
   price             : number,
   type              : ResourceType,

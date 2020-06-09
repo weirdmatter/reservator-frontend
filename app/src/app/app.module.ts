@@ -26,7 +26,8 @@ import { NewReservationPresenterComponent }       from './new-reservation/presen
 import { NewReservationControllerComponent }      from './new-reservation/controller/new-reservation.controller.component';
 import { MatDatepickerModule }                    from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE }   from '@angular/material/core';
-import {CollaboratorCardComponent} from "../shared/components/collaborator-card/collaborator-card.component";
+import {CollaboratorCardComponent}                from "../shared/components/collaborator-card/collaborator-card.component";
+import {ResourceCardComponent}                    from "../shared/components/resource-card/resource-card.component";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {CollaboratorCardComponent} from "../shared/components/collaborator-card/
     ReservationCardPresenterComponent,
     ReservationCardControllerComponent,
     CollaboratorCardComponent,
+    ResourceCardComponent,
     ListReservationsControllerComponent,
     ListCollaboratorsControllerComponent,
     ListResourcesControllerComponent,

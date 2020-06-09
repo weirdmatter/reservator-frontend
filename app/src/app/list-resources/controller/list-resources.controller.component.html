@@ -1,1 +1,6 @@
-<p>list-resources works!</p>
+<div *ngIf="resourceListingConfig">
+  <app-ui-listing
+    [config]="resourceListingConfig"
+    (search)="searchResources($event)">
+  </app-ui-listing>
+</div>

@@ -33,6 +33,7 @@
     <section class="items" *ngFor="let cardData of config.data">
       <app-reservation-card *ngIf="config.cardType === 'RESERVATION'" [data]="cardData"></app-reservation-card>
       <app-collaborator-card *ngIf="config.cardType === 'COLLABORATOR'" [data]="cardData"></app-collaborator-card>
+      <app-resource-card *ngIf="config.cardType === 'RESOURCE'" [data]="cardData"></app-resource-card>
     </section>
   </ng-container>
 
