@@ -28,6 +28,11 @@ import { MatDatepickerModule }                    from '@angular/material/datepi
 import { MatNativeDateModule, MAT_DATE_LOCALE }   from '@angular/material/core';
 import {CollaboratorCardComponent}                from "../shared/components/collaborator-card/collaborator-card.component";
 import {ResourceCardComponent}                    from "../shared/components/resource-card/resource-card.component";
+import { OverlayModule }                          from '@angular/cdk/overlay';
+import { PortalModule }                           from '@angular/cdk/portal';
+import { MatExpansionModule }                     from '@angular/material/expansion';
+import { MatAutocompleteModule }                  from '@angular/material/autocomplete';
+import { ScrollingModule }                        from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -62,10 +67,17 @@ import {ResourceCardComponent}                    from "../shared/components/res
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    OverlayModule,
+    PortalModule,
+    MatExpansionModule,
+    MatAutocompleteModule,
+    ScrollingModule
   ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
+    OverlayModule,
+    PortalModule,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })

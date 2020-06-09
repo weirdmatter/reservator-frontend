@@ -1,2 +1,6 @@
-<app-ui-new-reservation>
+<app-ui-new-reservation *ngIf="presenterConfig"
+  [data]="presenterConfig"
+  (close)="destroyView()"
+  (save)="saveReservation($event)"
+>
 </app-ui-new-reservation>

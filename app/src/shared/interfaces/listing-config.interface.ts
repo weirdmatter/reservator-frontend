@@ -5,10 +5,10 @@ import {CollaboratorCost} from "./collaborator-cost.interface";
 import {ResourceCost} from "./resource-cost.interface";
 
 export interface ListingConfig {
-  title: string,
-  subtitle: string,
-  hasFilter: boolean,
-  hasAction: boolean,
-  data: Reservation[] | Collaborator[] | Resource[] | CollaboratorCost[] | ResourceCost[],
-  cardType: string
+  title     : string,
+  subtitle  : string,
+  hasFilter : boolean,
+  hasAction : boolean,
+  data      : Reservation[] | Collaborator[] | Resource[] | CollaboratorCost[] | ResourceCost[],
+  cardType  : string
 }

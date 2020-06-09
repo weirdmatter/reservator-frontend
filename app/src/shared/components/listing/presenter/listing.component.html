@@ -24,7 +24,7 @@
     </section>
 
     <section *ngIf="config.hasAction">
-      <button class="primary" mat-raised-button>Nova Reserva</button>
+      <button class="primary" mat-raised-button (click)="onActionClicked()">Nova Reserva</button>
     </section>
 
   </section>

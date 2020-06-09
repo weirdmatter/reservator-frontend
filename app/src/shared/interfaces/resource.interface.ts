@@ -1,7 +1,7 @@
 import { ResourceType } from '../enums/resource-type.enum';
 
 export interface Resource {
-  resource_id       : number,
+  id       : number,
   code              : string,
   name              : string,
   // total_amount      : number,

@@ -33,9 +33,13 @@ export class ListingComponent implements OnInit {
   onDateChanged() {
     if (!this.datesAreValid()) return;
     this.search.emit({
-      start : this.datePipe.transform(this.form.get('initialDate').value, 'dd/MM/yyyy'),
-      end   : this.datePipe.transform(this.form.get('finalDate').value, 'dd/MM/yyyy')
+      start : this.datePipe.transform(this.form.get('initialDate').value, 'yyyy-MM-dd'),
+      end   : this.datePipe.transform(this.form.get('finalDate').value, 'yyyy-MM-dd')
     });
+  }
+
+  onActionClicked() {
+    this.action.emit();
   }
 
   private datesAreValid() : boolean {
