@@ -38,7 +38,7 @@ export class ReservationService {
    * @param reservation_group_id An id to identify resources which are part of the same reservation
    */
   deleteReservation(reservation_group_id : string) : Promise<any> {
-    return this.http.delete(`reservations/delete?group_id=${reservation_group_id}`);
+    return this.http.delete(`reservations/delete/${reservation_group_id}`);
   }
 
   /**
