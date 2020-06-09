@@ -1,6 +1,6 @@
 export interface Collaborator {
-  id            : number,
-  name          : string,
-  email         : string,
-  registration  : string
+  collaborator_id : number,
+  name            : string,
+  email           : string,
+  registration    : string
 }
