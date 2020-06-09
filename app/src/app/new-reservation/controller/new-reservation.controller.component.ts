@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
 import { NewReservation } from '../../../shared/interfaces/new-reservation.interface';
 import { Reservation } from 'src/shared/interfaces/reservation.interface';
 import { DatePipe } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-new-reservation',
@@ -24,7 +25,8 @@ export class NewReservationControllerComponent implements OnInit {
     private reservations  : ReservationService,
     private collaborators : CollaboratorService,
     private resources     : ResourceService,
-    private datePipe      : DatePipe)
+    private datePipe      : DatePipe,
+    private snackbar      : MatSnackBar)
   {
     this.isVisible  = false;
     this.close      = new EventEmitter<void>();
@@ -68,11 +70,11 @@ export class NewReservationControllerComponent implements OnInit {
 
     this.reservations.createReservation(newReservation)
       .then((res : Reservation) => {
-        console.log('RESERVA FEITA COM SUCESSO: ', res);
+        this.snackbar.open('Reserva criada com sucesso!', 'Ok', {duration: 5000});
       })
       .catch((err) => {
         console.error('ERRO AO FAZER RESERVA: ', err);
-
+        this.snackbar.open('Erro ao criar reserva. Verifique o console de desenvolvedor.', 'Ok', {duration: 5000});
     });
   }
 

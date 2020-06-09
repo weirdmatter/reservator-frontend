@@ -33,7 +33,7 @@ import { PortalModule }                           from '@angular/cdk/portal';
 import { MatExpansionModule }                     from '@angular/material/expansion';
 import { MatAutocompleteModule }                  from '@angular/material/autocomplete';
 import { ScrollingModule }                        from '@angular/cdk/scrolling';
-
+import { MatSnackBarModule }                      from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -71,7 +71,8 @@ import { ScrollingModule }                        from '@angular/cdk/scrolling';
     PortalModule,
     MatExpansionModule,
     MatAutocompleteModule,
-    ScrollingModule
+    ScrollingModule,
+    MatSnackBarModule
   ],
   providers: [
     MatDatepickerModule,
