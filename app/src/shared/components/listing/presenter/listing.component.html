@@ -1,8 +1,8 @@
 <section class="wrapper">
 
   <section>
-    <h1>Reservas</h1>
-    <h2>Lorem ipsum os guri no flying high</h2>
+    <h1>{{config.title}}</h1>
+    <h2>{{config.subtitle}}</h2>
   </section>
 
   <section class="filter-n-action">
@@ -30,8 +30,9 @@
   </section>
 
   <ng-container *ngIf="config?.data; else elseTemplate">
-    <section class="items" *ngFor="let reservation of config.data">
-      <app-reservation-card [data]="reservation"></app-reservation-card>
+    <section class="items" *ngFor="let cardData of config.data">
+      <app-reservation-card *ngIf="config.cardType === 'RESERVATION'" [data]="cardData"></app-reservation-card>
+      <app-collaborator-card *ngIf="config.cardType === 'COLLABORATOR'" [data]="cardData"></app-collaborator-card>
     </section>
   </ng-container>
 

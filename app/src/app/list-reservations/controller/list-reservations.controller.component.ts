@@ -106,7 +106,8 @@ export class ListReservationsControllerComponent implements OnInit {
       subtitle  : 'Selecione uma data de início e uma data de término para pesquisar por reservas efetuadas entre estes períodos de tempo.',
       hasFilter : true,
       hasAction : true,
-      data      : reservations
+      data      : reservations,
+      cardType  : 'RESERVATION'
     }
 
   }

@@ -1,1 +1,6 @@
-<p>list-collaborators works!</p>
+<div *ngIf="collaboratorListingConfig">
+  <app-ui-listing
+    [config]="collaboratorListingConfig"
+    (search)="searchCollaborators($event)">
+  </app-ui-listing>
+</div>
