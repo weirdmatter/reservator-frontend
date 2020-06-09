@@ -34,12 +34,15 @@ import { MatExpansionModule }                     from '@angular/material/expans
 import { MatAutocompleteModule }                  from '@angular/material/autocomplete';
 import { ScrollingModule }                        from '@angular/cdk/scrolling';
 import { MatSnackBarModule }                      from '@angular/material/snack-bar';
+import {IndexComponent}                           from "../shared/components/index/index.component";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ListingComponent,
+    IndexComponent,
     ReservationCardPresenterComponent,
     ReservationCardControllerComponent,
     CollaboratorCardComponent,
@@ -72,7 +75,8 @@ import { MatSnackBarModule }                      from '@angular/material/snack-
     MatExpansionModule,
     MatAutocompleteModule,
     ScrollingModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [
     MatDatepickerModule,

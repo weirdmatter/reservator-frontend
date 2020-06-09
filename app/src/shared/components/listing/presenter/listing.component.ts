@@ -6,6 +6,7 @@ import { Reservation } from 'src/shared/interfaces/reservation.interface';
 import { Collaborator } from 'src/shared/interfaces/collaborator.interface';
 import { Resource } from 'src/shared/interfaces/resource.interface';
 import {CollaboratorCost} from "../../../interfaces/collaborator-cost.interface";
+import {ResourceCost} from "../../../interfaces/resource-cost.interface";
 
 @Component({
   selector: 'app-ui-listing',
@@ -19,7 +20,7 @@ export class ListingComponent implements OnInit {
   @Output() search  : EventEmitter<object> = new EventEmitter<object>();
   @Output() action  : EventEmitter<void> = new EventEmitter<void>();
   form              : FormGroup
-  filteredItems     : Reservation[] | Collaborator[] | CollaboratorCost[] | Resource[] = [];
+  filteredItems     : Reservation[] | Collaborator[] | CollaboratorCost[] | Resource[] | ResourceCost[] = [];
 
   constructor(private fb : FormBuilder, private datePipe: DatePipe) {  }
 

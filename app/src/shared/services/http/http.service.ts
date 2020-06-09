@@ -33,4 +33,13 @@ export class HttpService {
   delete(route: string) : Promise<any> {
     return this.httpClient.delete(`${environment.apiBaseUrl}/${route}`).toPromise();
   }
+
+  /**
+   * Puts a new entry
+   * @param route The backend endpoint to be posted at
+   * @param payload The data to be sent
+   */
+  put(route: string, payload: any) : Promise<any> {
+    return this.httpClient.put(`${environment.apiBaseUrl}/${route}`, payload).toPromise();
+  }
 }
