@@ -35,6 +35,7 @@ import { MatAutocompleteModule }                  from '@angular/material/autoco
 import { ScrollingModule }                        from '@angular/cdk/scrolling';
 import { MatSnackBarModule }                      from '@angular/material/snack-bar';
 import {IndexComponent}                           from "../shared/components/index/index.component";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {IndexComponent}                           from "../shared/components/ind
     MatExpansionModule,
     MatAutocompleteModule,
     ScrollingModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [
     MatDatepickerModule,

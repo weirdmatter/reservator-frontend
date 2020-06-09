@@ -70,11 +70,11 @@ export class NewReservationControllerComponent implements OnInit {
 
     this.reservations.createReservation(newReservation)
       .then((res : Reservation) => {
-        this.snackbar.open('Reserva criada com sucesso!', 'Ok', {duration: 5000});
+        window.location.reload()
       })
       .catch((err) => {
         console.error('ERRO AO FAZER RESERVA: ', err);
-        this.snackbar.open('Erro ao criar reserva. Verifique o console de desenvolvedor.', 'Ok', {duration: 5000});
+        this.snackbar.open('Erro ao criar reserva.', 'Ok', {duration: 5000});
     });
   }
 

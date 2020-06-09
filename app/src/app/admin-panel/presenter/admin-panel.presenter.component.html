@@ -1,14 +1,13 @@
 <section>
 
   <h1>Configurações</h1>
-  <h2>Defina aqui as configurações de preço do metro quadrado e do assento.</h2>
+  <h2>Defina aqui os valores de assento e metro quadrado</h2>
 
-  <section *ngIf="data">
-    <h2> Configuração atual</h2>
-    <section class="acutalConfig">
-      <h3>Valor do metro quadrado: {{data.meter_price}}</h3>
-      <h3>Valor do assento: {{data.seat_price}}</h3>
-    </section>
+  <section *ngIf="data" class="config">
+    <mat-chip-list>
+      <mat-chip>Valor do metro quadrado: {{data.meter_price}}</mat-chip>
+      <mat-chip>Valor do assento: {{data.seat_price}}</mat-chip>
+    </mat-chip-list>
   </section>
 
   <form [formGroup]="form" class="wrapper">

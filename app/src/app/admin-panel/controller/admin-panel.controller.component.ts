@@ -31,6 +31,7 @@ export class AdminPanelControllerComponent implements OnInit {
       seat_price  : data.get('seat_price').value
     }
     await this.adminService.setAdminConfig(configAdminData);
+    window.location.reload()
   }
 
 }
