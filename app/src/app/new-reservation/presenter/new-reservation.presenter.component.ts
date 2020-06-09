@@ -2,8 +2,6 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { NewReservationConfig } from 'src/shared/interfaces/new-reservation-config.interface';
 import { Collaborator } from 'src/shared/interfaces/collaborator.interface';
-import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
 import { Resource } from 'src/shared/interfaces/resource.interface';
 import { DatePipe } from '@angular/common';
 
