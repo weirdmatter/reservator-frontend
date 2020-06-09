@@ -2,8 +2,8 @@ import { Resource } from './resource.interface';
 
 export interface ReservationGroupItems {
   resource    : Resource,
-  begin_date  : Date,
-  end_date    : Date,
+  begin_date  : string,
+  end_date    : string,
   amount      : number,
   total_price : number
 }

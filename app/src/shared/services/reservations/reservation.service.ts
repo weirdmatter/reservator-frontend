@@ -1,14 +1,28 @@
-import { Injectable } from '@angular/core';
-import { HttpService } from '../http/http.service';
-import { Reservation } from 'src/shared/interfaces/reservation.interface';
-import { NewReservation } from 'src/shared/interfaces/new-reservation.interface';
+import { Injectable, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import { HttpService }                                        from '../http/http.service';
+import { Reservation }                                        from 'src/shared/interfaces/reservation.interface';
+import { NewReservation }                                     from 'src/shared/interfaces/new-reservation.interface';
+import { Overlay, OverlayRef }                                            from '@angular/cdk/overlay';
+import { NewReservationControllerComponent } from '../../../app/new-reservation/controller/new-reservation.controller.component';
+import { ComponentPortal } from '@angular/cdk/portal';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
 
-  constructor(private http : HttpService) {}
+  invokeNewReservationComponent : EventEmitter<void>;
+  private overlayRef            : OverlayRef;
+
+  constructor(private http : HttpService, private overlay: Overlay, private componentFactoryResolver: ComponentFactoryResolver) {
+    this.invokeNewReservationComponent = new EventEmitter<void>();
+    this.overlayRef = this.overlay.create(
+      {
+        hasBackdrop: false,
+        positionStrategy: this.overlay.position().global().bottom().right()
+      }
+    );
+  }
 
   /**
    * Fetches all reservations
@@ -39,8 +53,12 @@ export class ReservationService {
    * Creates a new instance of the NewReservationComponent, displaying it to the user
    */
   openNewReservationComponent() {
-    // @TODO
+   const componentFactory = this.componentFactoryResolver.resolveComponentFactory(NewReservationControllerComponent);
+   const portal           = new ComponentPortal(componentFactory.componentType);
+   const component        = this.overlayRef.attach<NewReservationControllerComponent>(portal);
+
+   component.instance.close.subscribe(() => {
+     this.overlayRef.detach();
+   });
   }
-
-
 }

@@ -5,6 +5,7 @@ import { DatePipe } from '@angular/common';
 import { Reservation } from 'src/shared/interfaces/reservation.interface';
 import { Collaborator } from 'src/shared/interfaces/collaborator.interface';
 import { Resource } from 'src/shared/interfaces/resource.interface';
+import {CollaboratorCost} from "../../../interfaces/collaborator-cost.interface";
 
 @Component({
   selector: 'app-ui-listing',
@@ -18,7 +19,7 @@ export class ListingComponent implements OnInit {
   @Output() search  : EventEmitter<object> = new EventEmitter<object>();
   @Output() action  : EventEmitter<void> = new EventEmitter<void>();
   form              : FormGroup
-  filteredItems     : Reservation[] | Collaborator[] | Resource[] = [];
+  filteredItems     : Reservation[] | Collaborator[] | CollaboratorCost[] | Resource[] = [];
 
   constructor(private fb : FormBuilder, private datePipe: DatePipe) {  }
 
@@ -32,9 +33,13 @@ export class ListingComponent implements OnInit {
   onDateChanged() {
     if (!this.datesAreValid()) return;
     this.search.emit({
-      start : this.datePipe.transform(this.form.get('initialDate').value, 'dd/MM/yyyy'),
-      end   : this.datePipe.transform(this.form.get('finalDate').value, 'dd/MM/yyyy')
+      start : this.datePipe.transform(this.form.get('initialDate').value, 'yyyy-MM-dd'),
+      end   : this.datePipe.transform(this.form.get('finalDate').value, 'yyyy-MM-dd')
     });
+  }
+
+  onActionClicked() {
+    this.action.emit();
   }
 
   private datesAreValid() : boolean {
@@ -42,4 +47,5 @@ export class ListingComponent implements OnInit {
     const finalDate   = this.datePipe.transform(this.form.get('finalDate').value, 'dd/MM/yyyy');
     return initialDate !== null && finalDate !== null;
   }
+
 }
