@@ -1,5 +1,6 @@
 export interface ReservationItems {
   resource_id : number,
   amount      : number,
-  unity_price : number
+  begin_date  : Date,
+  end_date    : Date
 }

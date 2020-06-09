@@ -13,8 +13,10 @@ export class ReservationService {
   /**
    * Fetches all reservations
    */
-  getReservations() : Promise<Reservation[]> {
-    return this.http.get('reservations');
+  getReservations(dates ?: object) : Promise<Reservation[]> {
+    return dates
+      ? this.http.get(`reservations?start=${dates['start']}&end=${dates['end']}`)
+      : this.http.get('reservations');
   }
 
   /**

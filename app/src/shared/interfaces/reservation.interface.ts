@@ -1,11 +1,9 @@
-import { Resource } from './resource.interface';
+import {ReservationGroupItems} from "./reservation-group-items";
 
 export interface Reservation {
-  reservation_group_id  : string,
-  collaborator_id       : number,
-  total_price           : number,
-  resources             : Resource[],
-  creation_date         : Date,
-  begin_date            : Date,
-  end_date              : Date
+  reservation_group_id      : string,
+  collaborator_registration : string,
+  total_price               : number,
+  resources                 : ReservationGroupItems[],
+  creation_date             : Date
 }

@@ -1,0 +1,40 @@
+<section class="wrapper">
+
+  <section class="card-header">
+    <section>
+      <h3>Grupo da reserva</h3>
+      <h4>{{data.reservation_group_id}}</h4>
+    </section>
+    <section>
+      <h3>Responsável</h3>
+      <h4>{{data.collaborator_registration}}</h4>
+    </section>
+
+    <button mat-icon-button (click)="onDeleteClick()">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+  </section>
+
+  <section class="card-items">
+    <h3>Itens</h3>
+    <section class="item">
+      <div class="dates" *ngFor="let resource of data.resources">
+        <section>
+          <h4>{{resource.resource.name}} {{resource.amount}}x - R$ {{resource.total_price}}</h4>
+        </section>
+        <section>
+          <div class="date-item">
+            <h4>De: {{resource.begin_date | date: 'dd/MM/y'}}</h4>
+            <h4>Até: {{resource.end_date | date: 'dd/MM/y'}}</h4>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>
+
+  <section class="card-footer">
+    <h3>Data de criação: {{data.creation_date | date: 'dd/MM/y'}}</h3>
+    <h3>Preço total: R$ {{data.total_price}}</h3>
+  </section>
+
+</section>

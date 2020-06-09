@@ -20,7 +20,7 @@ export class ResourceService {
   /**
    * Fetches the generated reservation costs by all resources
    */
-  getResourcesTotalCost() : Promise<ResourceCost[]> {
-    return this.http.get('resources/costs')
+  getResourcesTotalCost(start : string, end: string) : Promise<ResourceCost[]> {
+    return this.http.get(`resources/costs?start=${start}&end=${end}`);
   }
 }
